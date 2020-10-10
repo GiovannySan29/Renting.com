@@ -20,15 +20,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:88/Renting.com/home">Home</a>
+                        <a class="nav-link" href="<?php echo base_url(). "home" ?>">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="componentes.html">Apartments</a>
-                    </li>
+                   
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a class="btn btn-primary my-2 my-sm-0 text-white" type="button" href="http://localhost:88/Renting.com/home/login">Login</a>
-                    <a class="btn btn-primary my-2 my-sm-0 ml-2 mr-3 text-white" type="button" href="http://localhost:88/Renting.com/home/register">Registro</a>
+                    <a class="btn btn-primary my-2 my-sm-0 text-white" type="button" href="<?php echo base_url(). "Home/login" ?>">Login</a>
+                    <a class="btn btn-primary my-2 my-sm-0 ml-2 mr-3 text-white" type="button" href="<?php echo base_url(). "Home/register" ?>">Registro</a>
                     <input class="form-control mr-sm-2" type="search" placeholder="búsqueda" aria-label="Search">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">búsqueda</button>
                 </form>

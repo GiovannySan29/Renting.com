@@ -1,8 +1,8 @@
-<form action="<?php echo base_url(). "home/"?>" method= "POST">
+<form action="<?php echo base_url(). "home/"?>" action="" method= "POST">
 <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="mb-4 mt-4">REGISTRO DE USUARIOS:</h1>
+                    <h1 class="mb-4 mt-4">USER REGISTRATION :</h1>
                     <form>
                         <div class="form-group">
                             <label for="nombreUsuario">User:</label>
