@@ -1,4 +1,4 @@
-<form action="<?php echo base_url(). "home/"?>" action="" method= "POST">
+<form action="<?php echo base_url(). "home/"?>"  method= "POST">
 <div class="container">
             <div class="row">
                 <div class="col">
@@ -11,7 +11,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                            <input type="password" class="form-control" id="passw" name="passw" placeholder="password">
                         </div>
                         <div class="form-group">
                             <label for="nombres">Name:</label>
