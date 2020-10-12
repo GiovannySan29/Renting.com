@@ -1,4 +1,4 @@
-
+<form id="login-form" action="<?php echo base_url(). "Login/ValidarUsuario"?>" method="post" role="form" style="display: block;">
     <div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -12,9 +12,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="<?php echo base_url(). "home/"?>" method="post" role="form" style="display: block;">
-							
-										<div class="form-group">
+								<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Usuario" >
 									</div>
 									<div class="form-group">
@@ -40,9 +38,7 @@
 											</div>
 										</div>
 									</div>
-								</form>
 								
-									
 								</form>
 							</div>
 						</div>

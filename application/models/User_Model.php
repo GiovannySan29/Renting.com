@@ -8,10 +8,10 @@ class User_Model extends CI_Model {
 		parent::__construct();
 		$this->load->model("User_Model");
 	}
-      public function insertUser( $user, $passw, $name,  $lastname,  $email, $address,  $cell) 
+      public function insertUser( $user, $passw, $name,  $lastname,  $email,   $cell, $address) 
       { 
       
-        return $name=$this->db->query("INSERT INTO users(user, passw, name, Lastname, email, address, cell) values 
+        return $name=$this->db->query("INSERT INTO users(user, passw, name, lastname, email,  cell , address) values 
         ({$user}, {$passw}, {$name}, {$lastname},   {$email},  {$address}, {$cell})");
       } 
 

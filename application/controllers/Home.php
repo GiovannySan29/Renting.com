@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 		$this->load->view('Layouts/header');
 		$this->load->view('home');
         $this->load->view('Layouts/footer');
-		if($this->input->POST())
+		if($this->input->post())
 		{
 			$user=$this->db->escape($_POST["user"]);
 			$passw=$this->db->escape($_POST["passw"]);

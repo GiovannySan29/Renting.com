@@ -1,4 +1,4 @@
-<form action="<?php echo base_url(). "home/"?>"  method= "POST">
+<form action="<?php echo base_url(). "home/insertUser"?>"  method= "POST">
 <div class="container">
             <div class="row">
                 <div class="col">
