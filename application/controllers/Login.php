@@ -29,7 +29,7 @@ class Login extends CI_Controller {
 	   //   $this->config->set_item('language', 'spanish');      //   Setear dinámicamente el idioma que deseamos que ejecute nuestra aplicación
 		   if(!isset($_POST['user'], $_POST['passw']))
 		   {   //   Si no recibimos ningún valor proveniente del formulario, significa que el usuario recién ingresa.   
-		  $this->load->view('sign_in_V.php');      //   Por lo tanto le presentamos la pantalla del formulario de ingreso.
+		  $this->load->view('sign_in_V');      //   Por lo tanto le presentamos la pantalla del formulario de ingreso.
 	  	}
 	   	else{                        //   Si el usuario ya pasó por la pantalla inicial y presionó el botón "Ingresar"
 		  $this->form_validation->set_rules('user','required');      //   Configuramos las validaciones ayudandonos con la librería form_validation del Framework Codeigniter
