@@ -1,4 +1,4 @@
-<form id="login-form" action="<?php echo base_url(). "Login/ValidarUsuario"?>" method="post" role="form" style="display: block;">
+<form id="login-form" action="<?php echo base_url(). "ValidarUsuario"?>" method="post" role="form" style="display: block;">
     <div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -25,7 +25,8 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit"  tabindex="4" class=" btn btn-login" value="Iniciar sesión">
+												<!-- <input type="submit"  tabindex="4" class=" btn btn-login" value="Iniciar sesión"> -->
+												<input type="submit" name="userlogin" value="<?= set_value('userlogin'); ?>" size="25" />
 											</div>
 										</div>
 									</div>
