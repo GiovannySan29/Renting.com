@@ -1,4 +1,4 @@
-<form id="login-form" action="<?php echo base_url(). "home/delete"?>" method="post" role="form" style="display: block;">
+<form id="login-form" action="<?php echo base_url(). "Delete_C/delete"?>" method="post" role="form" style="display: block;">
     <div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">

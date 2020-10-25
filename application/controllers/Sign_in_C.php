@@ -18,7 +18,8 @@ class Sign_in_C extends CI_Controller {
 			$email=$this->db->escape($_POST["email"]);
 			$identification=$this->db->escape($_POST["identification"]);
 			$typeIdentification=$this->db->escape($_POST["typeIdentification"]);
-			$this->Sign_in_M->insertUser($user,$passw,$name,$lastname,$email,$identification,$typeIdentification);
+			$typeUsers=$this->db->escape($_POST["typeUsers"]);
+			$this->Sign_in_M->insertUser($user,$passw,$name,$lastname,$email,$identification,$typeIdentification,$typeUsers);
      
 		}
 		

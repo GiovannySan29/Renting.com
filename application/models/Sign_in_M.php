@@ -8,13 +8,12 @@ class Sign_in_M extends CI_Model {
 		parent::__construct();
 		$this->load->model("Sign_in_M");
 	}
-      public function insertUser( $user, $passw, $name,  $lastname,  $email, $identification, $typeIdentification ) 
+      public function insertUser( $user, $passw, $name,  $lastname,  $email, $identification, $typeIdentification,$typeUsers) 
       { 
       
-        return $name=$this->db->query("INSERT INTO users(user, passw, name, lastname, email ,identification, typeIdentification ) values 
-        ({$user}, {$passw}, {$name}, {$lastname},   {$email} ,{$identification},{$typeIdentification })");
+        return $name=$this->db->query("INSERT INTO users(user, passw, name, lastname, email ,identification, typeIdentification,typeUsers ) values 
+        ({$user}, {$passw}, {$name}, {$lastname},   {$email} ,{$identification},{$typeIdentification },{$typeUsers})");
       } 
 }
-     
   
     

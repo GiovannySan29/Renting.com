@@ -4,16 +4,18 @@
                 <div class="col">
                         <h1 class="mb-4 mt-4">USER UPDATE:</h1>
                     <div class="alert-danger" id="msg-error" style="text-align: left">
-                            <strong>¡Important!</strong>  Correct the following data.
+                            
                     </div>
                             <?php echo validation_errors(); ?>
-                        
-                    <div class="form-group">
-                                 <label for="nombreUsuario">ID:</label>
-                                 <input type="text" class="form-control" id="user" name="id"  placeholder="id" required >
-                                 <small id="user" class="form-text text-muted">Enter a id to identify yourself on the platform</small>
-                    </div>
-                        <label >TypeIdentification:</label>
+                       
+                     <div class="form-group">
+                            <label for="direccion">Identification:</label>
+                                <input type="text" class="form-control" id="identification" name="identification" placeholder="Identification" maxlength="10"  required >
+                    </div>  
+                    <strong>¡Important!</strong> Please enter the data to change.
+                    <br>
+                    <br>
+                         <label >TypeIdentification:</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="typeIdentification" id="typeIdentification" value="cc" checked>
                             <label class="form-check-label" for="exampleRadios1">
@@ -26,15 +28,10 @@
                             PAS
                             </label>
                     </div>
-                    <br>
-                        <div class="form-group">
-                            <label for="direccion">Identification:</label>
-                                <input type="text" class="form-control" id="identification" name="identification" placeholder="Identification" maxlength="10"  required >
-                    </div> 
+                    <br>                      
                     <div class="form-group">
                         <label for="nombreUsuario">User:</label>
                             <input type="text" class="form-control" id="user" name="user"  placeholder="user" required >
-                            <small id="user" class="form-text text-muted">Enter a username to identify yourself on the platform</small>
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
@@ -52,7 +49,7 @@
                         <label for="email">Email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="email" required >
                     </div>
-                <button type="submit" class="btn btn-primary btn-block mb-5" id="btnUpdate" name="btnUpdate">Update account</button>
+                <button type="submit" class="btn btn-primary btn-block mb-5" id="update" name="update">Update account</button>
             </div>
         </div>  
     </div>
