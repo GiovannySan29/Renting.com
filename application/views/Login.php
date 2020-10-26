@@ -26,18 +26,7 @@
                         <a class="nav-link" href="<?php echo base_url() . "home/index" ?>">Home</a>
                     </li>
                 </ul>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Places to stay</a>
-                        <a class="dropdown-item" href="#">Experiences</a>
-                        <a class="dropdown-item" href="#">Online experiences</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+                
                 <form class="form-inline my-2 my-lg-0">
 
                     <a class="btn btn-outline-primary  my-2 my-sm-0 text-white" type="button" href="<?php echo base_url() . "Home/Login" ?>">Login</a>

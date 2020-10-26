@@ -8,7 +8,7 @@ class Login_Model extends CI_Model {
 		parent::__construct();
 		
 	}
-	public function login($user, $passw, $typeUsers)
+	public  function login_validation($user, $passw, $typeUsers)
 	{
         $this->db->where('user',$user);
         $this->db->where('passw',$passw);
@@ -21,5 +21,5 @@ class Login_Model extends CI_Model {
             return false;
         }
 	}
-
+   
 }

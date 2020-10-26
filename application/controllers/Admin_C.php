@@ -1,43 +1,49 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Empleados extends CI_Controller {
+class Admin_C extends CI_Controller {
 
-	public function __construct()
+	/*public function __construct()
 	{
 	    parent::__construct();
-	    $this->load->model("Admin_M.php");
-	  	if (!$this->session->userdata("login")) {
+	    $this->load->model("Admin_M");
+	  	if ($this->session->userdata("Login")) {
 	  		redirect(base_url());
 	  	}
 
-	}
+	}*/
 
-	function index()
+	/*function index()
 	{
-
-			$this->load->view('Admin_V');
-	}
-
-	function guardar(){
-		//El metodo is_ajax_request() de la libreria input permite verificar
-		//si se esta accediendo mediante el metodo AJAX 
-		if ($this->input->is_ajax_request()) {
-			$nombres = $this->input->post("nombres");
-			$apellidos = $this->input->post("apellidos");
-			$dni = $this->input->post("dni");
-			$telefono = $this->input->post("telefono");
-			$email = $this->input->post("email");
-
-			$this->form_validation->set_rules('nombres','Nombres','required');
-			$this->form_validation->set_rules('apellidos','Apellidos','required');
-			$this->form_validation->set_rules('dni','DNI','required');
-			$this->form_validation->set_rules('telefono','Telefono','required');
-			$this->form_validation->set_rules('email','Email','required|valid_email');
-
+		$this->load->view('Layouts/header');	
+		$this->load->view('Admin_V');
+        $this->load->view('Layouts/footer');
+	}*/
+	public function insert(){
+		$this->load->view('Layouts/header');
+		$this->load->view('Admin_V');
+		$this->load->view('Layouts/footer');
+		$this->load->model('Admin_M');
+		if ($this->input->post()) {
+			$title = $this->db->escape($_POST["title"]);
+			$type = $this->idb->escape($_POST["type"]);
+			$addess= $this->db->escape($_POST["addess"]);
+			$rooms = $this->db->escape($_POST["rooms"]);
+			$area = $this->idb->escape($_POST["area"]);
+			$price = $this->db->escape($_POST["price"]);
+			$foto_accommodation = $this->db->escape($_POST["foto_accommodation"]);
 			
+			/*$this->form_validation->set_rules('title','title','required');
+			$this->form_validation->set_rules('type','type','required');
+			$this->form_validation->set_rules('addess','addess','required');
+			$this->form_validation->set_rules('rooms','rooms','required');
+			$this->form_validation->set_rules('area','area','required');
+			$this->form_validation->set_rules('price','price','required');
+			$this->form_validation->set_rules('foto_accommodation','foto_accommodation','required');*/
 
-			if ($this->form_validation->run() === TRUE) {
+			$this->Admin_M->insert($title,$type,$addess,$rooms,$area,$price,$foto_accommodation);
+		
+			/*if ($this->form_validation->run() === TRUE) {
 
 				$config = [
 					"upload_path" => "./assets/images/uploads",
@@ -46,18 +52,19 @@ class Empleados extends CI_Controller {
 
 				$this->load->library("upload",$config);
 
-				if ($this->upload->do_upload('foto_empleado')) {
+				if ($this->upload->do_upload('foto_accommodation')) {
 					$data = array("upload_data" => $this->upload->data());
 					$datos = array(
-						"nombres_empleado" => $nombres,
-						"apellidos_empleado" => $apellidos,
-						"dni_empleado" => $dni,
-						"telefono_empleado" => $telefono,
-						"email_empleado" => $email,
-						"foto_empleado" => $data['upload_data']['file_name'],
-						"id_usuario" => $this->session->userdata('id')
+						"title" => $title,
+						"type" => $type,
+						"addess" => $addess,
+						"rooms" => $rooms,
+						"area" => $area,
+						"price" => $price,
+						"foto_accommodation" => $data['upload_data']['file_name'],
+						
 					);
-					if($this->Empleados_model->guardar($datos)==true)
+					if($this->Admin_M->insert($datos)==true)
 						echo "exito";
 					else
 						echo "error";
@@ -77,11 +84,13 @@ class Empleados extends CI_Controller {
 		else
 		{
 			show_404();
-		}
+		}*/
 
 
 	}
-
+}
+	
+		
 	function mostrar(){
 		if ($this->input->is_ajax_request()) {
 			$buscar = $this->input->post("buscar");
@@ -99,33 +108,35 @@ class Empleados extends CI_Controller {
 		if ($this->input->is_ajax_request()) {
 		
 			$idsele = $this->input->post("idsele");
-			$nombres = $this->input->post("nombressele");
-			$apellidos = $this->input->post("apellidossele");
-			$dni = $this->input->post("dnisele");
-			$telefono = $this->input->post("telefonosele");
-			$email = $this->input->post("emailsele");
+			$title = $this->input->post("titlesele");
+			$type = $this->input->post("typessele");
+			$addess= $this->input->post("addesssele");
+			$rooms = $this->input->post("roomssele");
+			$area = $this->input->post("areasele");
+			$price = $this->input->post("pricesele");
 
 			$config = [
 				"upload_path" => "./assets/images/uploads",
-				'allowed_types' => "png|jpg"
+				'allowed_types' => "png||jpg"
 			];
 
 			$this->load->library("upload",$config);
 
 			if ($this->upload->do_upload('foto_nueva')) {
-				$registro = $this->Empleados_model->capturarImagen($idsele);
-				unlink("./assets/images/uploads/".$registro->foto_empleado);
+				$registro = $this->Admin_M->capturarImagen($idsele);
+				unlink("./assets/images/uploads/".$registro->foto_accommodation);
 				$data = array("upload_data" => $this->upload->data());
 				$datos = array(
-					"nombres_empleado" => $nombres,
-					"apellidos_empleado" => $apellidos,
-					"dni_empleado" => $dni,
-					"telefono_empleado" => $telefono,
-					"email_empleado" => $email,
-					"foto_empleado" => $data['upload_data']['file_name']
+					"title" => $title,
+					"type" => $type,
+					"addess" => $addess,
+					"rooms" => $rooms,
+					"area" => $area,
+					"price" => $price,
+					"foto_accommodation" => $data['upload_data']['file_name']
 				);
 
-				if($this->Empleados_model->actualizar($idsele,$datos) == true)
+				if($this->Admin_M->actualizar($idsele,$datos) == true)
 				{
 					echo "Registro Actualizado";
 				}
@@ -134,15 +145,7 @@ class Empleados extends CI_Controller {
 				}
 			}else{
 				echo $this->upload->display_errors();
-			}
-
-
-			
-			
-
-
-			
-			
+			}	
 		}
 		else
 		{
@@ -153,9 +156,9 @@ class Empleados extends CI_Controller {
 	function eliminar(){
 		if ($this->input->is_ajax_request()) {
 			$idsele = $this->input->post("id");
-			$registro = $this->Empleados_model->capturarImagen($idsele);
-			unlink("./assets/images/uploads/".$registro->foto_empleado);
-			if($this->Empleados_model->eliminar($idsele) == true)
+			$registro = $this->Admin_M->capturarImagen($idsele);
+			unlink("./assets/images/uploads/".$registro->foto_accommodation);
+			if($this->Admin_M->eliminar($idsele) == true)
 				echo "Registro Eliminado";
 			else
 				echo "No se pudo eliminar los datos";
@@ -168,3 +171,4 @@ class Empleados extends CI_Controller {
 	}
 
 }
+?>

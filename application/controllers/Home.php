@@ -52,12 +52,12 @@ class Home extends CI_Controller {
         $this->load->view('Layouts/footer');
 	}
 	public function crud(){
-		$this->load->view('Layouts/header');
+		// $this->load->view('Layouts/header');
 		$this->load->view('crud_V');
 		$this->load->view('Layouts/footer');
 	}
 	public function admin(){
-		// $this->load->view('Layouts/header');
+		$this->load->view('Layouts/header');
 		$this->load->view('Admin_V');
 		$this->load->view('Layouts/footer');
 	}
