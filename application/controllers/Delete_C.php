@@ -12,7 +12,7 @@ class Delete_C extends CI_Controller{
 	{
     $identification=$this->input->post('identification');
     $typeIdentification=$this->input->post('typeIdentification');
-	$r =$this->Delete_M->delete($identification,$typeIdentification);
+	$r =$this->Delete_M->delete($identification ,$typeIdentification);
     if($identification ==true && $typeIdentification ==true){
         if($r==true){
             $this->load->view('Layouts/header');

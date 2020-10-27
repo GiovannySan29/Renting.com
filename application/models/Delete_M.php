@@ -11,6 +11,6 @@ class Delete_M extends CI_Model
 
     public function delete($identification, $typeIdentification)
     {
-        $this->db->query("DELETE  FROM users WHERE identification='" . $identification . "' AND typeIdentification='" . $typeIdentification . "'");
+        $this->db->query("DELETE  FROM users WHERE identification='" .$identification. "' AND typeIdentification='" .$typeIdentification. "'");
     }
 }

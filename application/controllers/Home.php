@@ -61,6 +61,11 @@ class Home extends CI_Controller {
 		$this->load->view('Admin_V');
 		$this->load->view('Layouts/footer');
 	}
-	
+	public function guardar()
+	{
+		$this->load->view('Layouts/header');
+		$this->load->view('home');
+		$this->load->view('Layouts/footer');
+	}
 	
 }

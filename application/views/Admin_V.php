@@ -31,7 +31,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <strong>¡Important!</strong> Correct the following data.
                             <div class="list-errors"></div>
                         </div>
-                        <form id="form-create-empleado" style="padding:0px 15px;" class="form-horizontal" role="form" action="<?php base_url(); ?>Admin_C/insert" method="POST">
+                        <form id="form-create-empleado" style="padding:0px 15px;" class="form-horizontal" role="form" action="<?php base_url(); ?>Admin_C/guardar" method="POST">
                             <div class="form-group">
                                 <input type="text" name="title" class="form-control" placeholder="title" />
                             </div>

@@ -23,15 +23,12 @@ class Admin_M extends CI_Model {
 		 }
 	}
 	public	function mostrar($valor,$indice = FALSE, $cantidad = FALSE){
-	 	/*$this->db->like("nombres_empleado",$valor);
-	 	$this->db->or_like('apellidos_empleado', $valor); 
-	 	$consulta = $this->db->get("empleados");
-	 	return $consulta->result();*/	
+	 	
 	 	$this->db->select('*');
 	 	$this->db->from('accommodation');
-	 	$this->db->join('usuarios', 'usuarios.id_usuario = empleados.id_usuario');
-	 	$this->db->like("empleados.nombres_empleado",$valor,$indice,$cantidad);
-	 	$this->db->or_like('empleados.apellidos_empleado', $valor,$indice,$cantidad); 
+	 	$this->db->join(  'accommodation.id_usuario');
+	 	$this->db->like('accommodation.title',$valor,$indice,$cantidad);
+	 	$this->db->or_like('accommodation.type', $valor,$indice,$cantidad); 
 	 	$consulta = $this->db->get();
 	 	return $consulta->result();
 	 }

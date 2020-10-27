@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_C extends CI_Controller {
 
-	/*public function __construct()
+	public function __construct()
 	{
 	    parent::__construct();
 	    $this->load->model("Admin_M");
@@ -11,39 +11,39 @@ class Admin_C extends CI_Controller {
 	  		redirect(base_url());
 	  	}
 
-	}*/
+	}
 
-	/*function index()
+	function index()
 	{
 		$this->load->view('Layouts/header');	
 		$this->load->view('Admin_V');
         $this->load->view('Layouts/footer');
-	}*/
-	public function insert(){
+	}
+	public function guardar(){
 		$this->load->view('Layouts/header');
 		$this->load->view('Admin_V');
 		$this->load->view('Layouts/footer');
 		$this->load->model('Admin_M');
-		if ($this->input->post()) {
-			$title = $this->db->escape($_POST["title"]);
-			$type = $this->idb->escape($_POST["type"]);
-			$addess= $this->db->escape($_POST["addess"]);
-			$rooms = $this->db->escape($_POST["rooms"]);
-			$area = $this->idb->escape($_POST["area"]);
-			$price = $this->db->escape($_POST["price"]);
-			$foto_accommodation = $this->db->escape($_POST["foto_accommodation"]);
+		if($this->input->is_ajax_request()) {
+			$title = $this->input->post("title");
+			$type = $this->iinput->post("type");
+			$addess= $this->input->post("addess");
+			$rooms = $this->input->post("rooms");
+			$area = $this->input->post("area");
+			$price = $this->input->post("price");
+			$foto_accommodation = $this->input->post($_POST["foto_accommodation"]);
 			
-			/*$this->form_validation->set_rules('title','title','required');
-			$this->form_validation->set_rules('type','type','required');
-			$this->form_validation->set_rules('addess','addess','required');
-			$this->form_validation->set_rules('rooms','rooms','required');
-			$this->form_validation->set_rules('area','area','required');
-			$this->form_validation->set_rules('price','price','required');
-			$this->form_validation->set_rules('foto_accommodation','foto_accommodation','required');*/
+			$this->form_validation->set_rules('title','Title','required');
+			$this->form_validation->set_rules('type','Type','required');
+			$this->form_validation->set_rules('addess','Addess','required');
+			$this->form_validation->set_rules('rooms','Rooms','required');
+			$this->form_validation->set_rules('area','Area','required');
+			$this->form_validation->set_rules('price','Price','required');
+			$this->form_validation->set_rules('foto_accommodation','Foto_accommodation','required');
 
 			$this->Admin_M->insert($title,$type,$addess,$rooms,$area,$price,$foto_accommodation);
 		
-			/*if ($this->form_validation->run() === TRUE) {
+			if ($this->form_validation->run() === TRUE) {
 
 				$config = [
 					"upload_path" => "./assets/images/uploads",
@@ -84,11 +84,11 @@ class Admin_C extends CI_Controller {
 		else
 		{
 			show_404();
-		}*/
+		}
 
 
 	}
-}
+
 	
 		
 	function mostrar(){
